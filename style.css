@@ -1,1 +1,201 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
 
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,0.9);
+  z-index: 1000;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.hamburger {
+  width: 30px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+  z-index: 1001;
+}
+
+.hamburger span {
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.4s ease;
+}
+
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.98);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: left 0.4s ease;
+  z-index: 999;
+}
+
+.menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.menu-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 2rem;
+  transition: color 0.3s;
+}
+
+.menu-links a:hover {
+  color: #00eaff;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: radial-gradient(circle, #111, #000);
+  animation: rotateBg 30s linear infinite;
+  padding: 0 20px;
+}
+
+@keyframes rotateBg {
+  0% {background-position: center;}
+  100% {background-position: 1000%;}
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin: 20px 0;
+}
+
+.cta {
+  text-decoration: none;
+  color: #000;
+  background: #00eaff;
+  padding: 15px 40px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: transform 0.3s;
+}
+
+.cta:hover {
+  transform: scale(1.1);
+}
+
+.services {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.service-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  background: #111;
+  padding: 30px;
+  border-radius: 15px;
+  min-width: 200px;
+  flex: 1 1 200px;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.feedback {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.feedback h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  scroll-snap-type: x mandatory;
+}
+
+.feedback-card {
+  flex: 0 0 250px;
+  background: #111;
+  padding: 20px;
+  border-radius: 15px;
+  scroll-snap-align: start;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #111;
+}
+
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: bounce 2s infinite;
+  z-index: 1001;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+@keyframes bounce {
+  0%, 100% {transform: translateY(0);}
+  50% {transform: translateY(-10px);}
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {font-size: 2rem;}
+  .cta {padding: 12px 24px;}
+  .card {flex: 1 1 80%;}
+}
